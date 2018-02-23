@@ -16,7 +16,7 @@ Ok, đơn giản phải không!
 
 Khóa ngoại là cái biểu thị cho mối quan hệ trong CSDL quan hệ. Đơn giản thôi, 1 category sẽ có nhiều product - 1 product thuộc 1 category (để cho vấn đề đơn giản thôi nhé, bạn muốn product thuộc nhiều category cũng chả sao). Quan hệ 1 - * (1 - nhiều) là cái rất phổ biến.
 
-Trong EF, cái đại diện cho mối quan hệ là Navigation Property. Nó được biểu diễn bằng cách thêm các properties như sau:
+Trong EF, cái đại diện cho mối quan hệ là **Navigation Property**. Nó được biểu diễn bằng cách thêm các properties như sau:
 
 <script src="https://gist.github.com/oclockvn/9b66de54a560c4cd203aba1c188f33c8.js"></script>
 
@@ -44,7 +44,7 @@ Chú ý:
 
 1. Mình không set `CategoryId` cho product khi thêm mới. Và để làm được điều này, hãy quay lại entity mà xem, `CategoryId` được khai báo là `nullable`.
 
-2. Dòng 11, thực hiện save để product được thêm vào db, từ đó sinh ra id (vì id là kiểu tự động tăng - đây là quy ước của EF, nếu bạn đặt property là Id hoặc EntityId và có kiểu là int thì nó sẽ là khóa chính tự động tăng).
+2. Dòng 11, thực hiện save để product được thêm vào db, từ đó sinh ra id (vì id là kiểu tự động tăng - đây là quy ước của EF, nếu bạn đặt property là Id hoặc \<Entity\>Id và có kiểu là int thì nó sẽ là khóa chính tự động tăng).
 
 3. Dòng 13, thêm 2 product này vào category và save. Điều này cũng đồng thời set khóa ngoại của 2 product (`CategoryId`) là category hiện tại.
 
@@ -104,7 +104,7 @@ Bạn thấy đấy, lazy loading không load data nếu không sử dụng (t�
 
 ### Khi nào nên áp dụng
 
-1 điều dễ thấy nhất là không nên dùng lazy loading cho Collection Property vì nó sẽ gọi nhiều lần. Ngược lại với Navigation Property là 1 class thông thường, sử dụng lazy loading sẽ tiết kiệm công sức cho bạn hơn.
+1 điều dễ thấy nhất là không nên dùng lazy loading cho Collection Property (query trong vòng lặp) vì nó sẽ gọi nhiều lần. Ngược lại với Navigation Property là 1 class thông thường, sử dụng lazy loading sẽ tiết kiệm công sức cho bạn hơn.
 
 Tuy nhiên, ai biết được, mình thích thì mình gọi thôi :))
 
