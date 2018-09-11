@@ -3,7 +3,7 @@
 1. Install following packages
 
 ```
-npm install react-dom react-router-dom --save
+npm install react-router-dom --save
 ```
 
 2. Usually you should create a separate component used for application routing
@@ -35,6 +35,8 @@ class Routes extends Component {
 export default Routes;
 ```
 
+Here `Layout` is just a hoc
+
 3. In your entry component, use `BrowserRouter`
 
 ```js
@@ -63,4 +65,16 @@ import { Link } from 'react-router-dom';
 <Link to="/" className="logo">Logo</Link>
 ```
 
+`<Link>`s use the to prop to describe the location that they should navigate to. This can either be a string or a location object (containing a combination of `pathname`, `search`, `hash`, and `state` properties). When it is a string, it will be converted to a location object.
+
+```
+<Link to={{ pathname: '/post/1' }}>Post #1</Link>
+
+// a basic location object
+{ pathname: '/', search: '', hash: '', key: 'abc123' state: {} }
+```
+
 ### You can get routing value via props
+
+```
+```
