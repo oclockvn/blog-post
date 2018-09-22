@@ -1,6 +1,6 @@
 # Redux
 
-1. Install redux, we'll wanted to install react redux binding as well
+1. Install redux, we'll want to install react redux binding as well
 
 ```
 npm i redux react-redux --save
