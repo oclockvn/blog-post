@@ -238,7 +238,7 @@ export default connect(mapStateToProps, null)(App)
 
 6. Passing actions
 
-After connect and map state tp props, we can get all updated `state` via component `props`. So now, if we wanted to get all actions, pass the 2nd arguments in connect function
+After connect and map state to props, we can get all updated `state` via component `props`. So now, if we want to get all actions, pass the 2nd arguments in connect function
 
 ```js
 // src/app.js
