@@ -29,6 +29,12 @@ nuget spec MyApp.csproj
 nuget pack
 ```
 
+for release mode, use additional param
+
+```
+nuget pack -Prop Configuration=Release
+```
+
 A package will be created, say `MyApp.1.0.0.nupkg`
 
 8. Run command below to publish that package
